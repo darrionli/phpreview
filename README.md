@@ -1,3 +1,10 @@
-# phpreview
+# linux
 
-PHP interview review
+- [文件与目录命令]()
+
+- [awk]()
+
+- [crontab]()
+
+  
+
