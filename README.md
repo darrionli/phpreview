@@ -2,7 +2,7 @@
 
 #### PHP
 
-- 基础知识
+- [基础知识](https://github.com/darrionli/phpreview/blob/master/PHP/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
 - 进阶篇
 - 实践篇
 
