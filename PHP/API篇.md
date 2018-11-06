@@ -16,6 +16,12 @@
 
 4. API如何保证数据不被篡改？
 
+   https://zhuanlan.zhihu.com/p/33272881
+
+   非对称加密（RSA）、MD5摘要、以及令牌机制
+
+   - 条件允许，建议开放api都是用https协议进行数据传输
+
 5. JSON和JSONP的区别
 
 6. 数据加密和验签的区别
