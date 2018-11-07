@@ -18,11 +18,20 @@
 
    https://zhuanlan.zhihu.com/p/33272881
 
+   https://cloud.tencent.com/developer/article/1165284
+
    非对称加密（RSA）、MD5摘要、以及令牌机制
 
-   - 条件允许，建议开放api都是用https协议进行数据传输
+   - 使用https进行通信
+   - 请求签名，防止参数被篡改
+   - 身份确认机制，每次请求都要验证合法性
+   - 对敏感的请求和响应进行加解密操作
 
 5. JSON和JSONP的区别
+
+   JSON是一种数据交换格式，JSONP是一种非官方的跨域数据交换协议
+
+   https://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html
 
 6. 数据加密和验签的区别
 
@@ -37,5 +46,3 @@
 11. JWT
 
 12. PHP中`json_encode(['key'=>123])`与`return json_encode([])`的区别，会产生什么问题，如何解决？
-
-    ​
