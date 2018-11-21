@@ -1,4 +1,4 @@
-### Nginx安装
+#### Nginx安装
 
 1. 下载地址：http://nginx.org/en/download.html
 
@@ -42,7 +42,7 @@
 
    关闭：`nginx -s stop`
 
-### Nginx配置
+#### Nginx配置
 
 1. 虚拟主机：域名、端口、IP
 
@@ -57,7 +57,7 @@
 
 4. location精准匹配
 
-### Nginx优化
+#### Nginx优化
 
 1. gzip压缩和Expres设置
 
@@ -70,3 +70,4 @@
    upstream
 
    反向代理会导致服务器只能获取到代理服务器的ip
+
