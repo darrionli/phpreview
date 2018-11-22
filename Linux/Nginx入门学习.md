@@ -71,3 +71,29 @@
 
    反向代理会导致服务器只能获取到代理服务器的ip
 
+#### 整合PHP
+
+nginx和apache下，php的运行模式有所不同，apache下是以模块的方式运行，nginx是以fastcgi的形式，就是说nginx遇到php文件统一交给php进程来处理，管理这个php fastcgi进程的就是php-fpm，因此两种服务器下的编译方式略微不同
+
+```shell
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=/usr/local/mysql --with-libxml-dir=/usr/local/libxml2 --with-png-dir=/usr/local/libpng --with-jpeg-dir=/usr/local/jpeg9 --with-freetype-dir=/usr/local/freetype --with-gd=/usr/local/gd2 --with-zlib-dir=/usr/local/zlib --with-mcrypt=/usr/local/libmcrypt --with-xpm-dir=/usr/lib64/ --enable-soap --enable-mbstring=all --enable-sockets --enable-fpm
+```
+
+编译时需要带  --enable-fpm 参数即可开启php-fpm。
+
+编译完成之后，需要创建一下php-fpm.conf文件和www.conf文件，都在php/etc目录下。然后启动php-fpm，在9000端口运行。
+
+配置nginx
+
+```shell
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000  
+#  
+location ~ \.php$ {  
+root html;  
+fastcgi_pass 127.0.0.1:9000;  
+fastcgi_index index.php;  
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;  
+include fastcgi_params;  
+}
+```
+
